@@ -56,12 +56,12 @@ bool validState(const vector<int>& state) {
     return !chickenAloneWithFox && !chickenAloneWithGrain;
 }
 
-vector<vector<int>> generateValidStates(int maxStateValue) {
+vector<vector<int>> generateValidStates() {
     vector<vector<int>> states;
-    for (int farmer=0; farmer<maxStateValue; farmer++) {
-        for (int fox=0; fox<maxStateValue; fox++) {
-            for (int chicken=0; chicken<maxStateValue; chicken++) {
-                for (int grain=0; grain<maxStateValue; grain++) {
+    for (int farmer=0; farmer<2; farmer++) {
+        for (int fox=0; fox<2; fox++) {
+            for (int chicken=0; chicken<2; chicken++) {
+                for (int grain=0; grain<2; grain++) {
                     vector<int> state = {farmer, fox, chicken, grain};
                     if (validState(state)) {
                         states.push_back(state);
@@ -76,7 +76,7 @@ vector<vector<int>> generateValidStates(int maxStateValue) {
 int main() {
     auto graph = new Graph();
 
-    for (auto const& state: generateValidStates(2)) {
+    for (auto const& state: generateValidStates()) {
         graph->addNode(state);
     }
 
@@ -86,7 +86,6 @@ int main() {
                 graph->addEdge(state1.first, state2.first);
             }
         }
-
     }
 
     //graph->displayGraph();

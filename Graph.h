@@ -37,17 +37,16 @@ private:
     vector<Node*> nodeList {};
     void resetGraph();
     Node* getNodeByState(const string& state);
-
-public:
-    void addNode(const vector<int>& state);
     void addNode(Node* node);
     static void addEdge(Node* node1, Node* node2);
     static void addEdge(Node* node1, Node* node2, int weight);
     void addEdge(int nodeI1, int nodeI2, int weight);
+
+public:
+    void addNode(const vector<int>& state);
     void addEdge(int nodeI1, int nodeI2);
     void displayGraph();
     std::map<int, vector<int>> getStates();
-
 
     vector<string> breadthFirstSearch(const string& startNodeStateRaw, const string& endNodeStateRaw);
     vector<string> depthFirstSearch();
