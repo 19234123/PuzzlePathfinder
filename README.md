@@ -9,5 +9,5 @@ Puzzle Solver Class:
 A graph-based puzzle solver using Dijkstra's algorithm to find shortest path to end state.
 Uses graph implemented here: https://github.com/19234123/Graph_Pathfinding
 
-Puzzle State Class:
+Farmer Puzzle Class:
 Example state class based on farmer river crossing problem
